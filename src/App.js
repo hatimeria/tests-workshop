@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css';
+import './Nameday';
+import Nameday from './Nameday';
 
 function App() {
   const [name, setName] = useState('stranger');
@@ -15,6 +17,7 @@ function App() {
         <label htmlFor="name">Your name:</label>
         <input type="text" id="name" onChange={e => handleChange(e.target.value)} />
       </form>
+      <Nameday />
     </main>
   );
 }
