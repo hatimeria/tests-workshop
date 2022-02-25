@@ -20,3 +20,11 @@ test('display name after sending form', () => {
   fireEvent.change(input, { target: { value: 'Julia' } });
   expect(message.textContent).toBe('Hello Julia!');
 });
+
+test('display error message if name is incorrect', () => {
+  render(<App />);
+  const input = screen.getByRole('textbox');
+  fireEvent.change(input, { target: { value: '2454%' } });
+  const error = screen.getByRole('alert');
+  expect(error).toBeInTheDocument();
+});
