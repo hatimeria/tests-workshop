@@ -1,8 +1,22 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders welcome message', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const message = screen.getByText('Hello stranger!');
+  expect(message).toBeInTheDocument();
+});
+
+test('renders input and button', () => {
+  render(<App />);
+  const input = screen.getByRole('textbox');
+  expect(input.value).toBe('');
+});
+
+test('display name after sending form', () => {
+  render(<App />);
+  const input = screen.getByRole('textbox');
+  const message = screen.getByText('Hello stranger!');
+  fireEvent.change(input, { target: { value: 'Julia' } });
+  expect(message.textContent).toBe('Hello Julia!');
 });
