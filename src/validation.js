@@ -1,3 +1,3 @@
 export const validateText = (text) => (
-  text && !/[^a-zA-Z]/.test(text)
+  text && /^[\p{L}\p{N}\p{M}-]+$/u.test(text)
 );

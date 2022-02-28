@@ -1,16 +1,16 @@
 import { validateText } from './validation';
 
 describe('text validation', () => {
-  test('works for valid name', () => {
+  test('passes for valid name', () => {
     expect(validateText('Piotr')).toBeTruthy();
   });
-  test('works for Polish characters', () => {
+  test('passes for Polish characters', () => {
     expect(validateText('Grażyna')).toBeTruthy();
   });
-  test('works for text with invalid characters', () => {
-    expect(validateText('djdks5')).toBeFalsy();
+  test('doesnt pass for text with invalid characters', () => {
+    expect(validateText('djdks%5')).toBeFalsy();
   });
-  test('works for empty string', () => {
+  test('doesnt pass for empty string', () => {
     expect(validateText('')).toBeFalsy();
   });
 });
