@@ -12,12 +12,12 @@ function App() {
   return (
     <main>
       <h1>Hello {name}!</h1>
-      {error && <p role="alert"></p>}
+      {error && <p role="alert">{error}</p>}
       <form>
         <label htmlFor="name">Your name:</label>
         <input type="text" id="name" onChange={e => handleChange(e.target.value)} />
       </form>
-      <Nameday />
+      <Nameday name={name} />
     </main>
   );
 }

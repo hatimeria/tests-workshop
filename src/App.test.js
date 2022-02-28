@@ -7,13 +7,13 @@ test('renders welcome message', () => {
   expect(message).toBeInTheDocument();
 });
 
-test('renders input and button', () => {
+test('renders input with no default value', () => {
   render(<App />);
   const input = screen.getByRole('textbox');
   expect(input.value).toBe('');
 });
 
-test('display name after sending form', () => {
+test('displays name after sending form', () => {
   render(<App />);
   const input = screen.getByRole('textbox');
   const message = screen.getByText('Hello stranger!');
