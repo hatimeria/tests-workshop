@@ -19,7 +19,6 @@ const Nameday = ({ name }) => {
       setError(true);
     }
   }
-  console.log(nameDays);
 
   return (
     <div>
