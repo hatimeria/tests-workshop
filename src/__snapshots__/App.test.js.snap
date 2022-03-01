@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<main>
+  <h1>
+    Hello 
+    stranger
+    !
+  </h1>
+  
+  <form>
+    <label
+      htmlFor="name"
+    >
+      Your name:
+    </label>
+    <input
+      id="name"
+      onChange={[Function]}
+      type="text"
+    />
+  </form>
+  <div>
+    
+    0
+  </div>
+</main>
+`;

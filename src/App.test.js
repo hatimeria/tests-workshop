@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 import App from './App';
 
 test('renders welcome message', () => {
@@ -27,4 +28,11 @@ test('display error message if name is incorrect', () => {
   fireEvent.change(input, { target: { value: '2454%' } });
   const error = screen.getByRole('alert');
   expect(error).toBeInTheDocument();
+});
+
+test('renders correctly', () => {
+  const tree = renderer
+    .create(<App />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
 });

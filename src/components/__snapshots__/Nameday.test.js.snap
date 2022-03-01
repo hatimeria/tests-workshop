@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    See your namedays
+  </button>
+  0
+</div>
+`;

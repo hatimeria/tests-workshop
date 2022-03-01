@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 import Nameday from './Nameday';
 
 test('renders button', () => {
@@ -22,4 +23,11 @@ test('nameday is displayed when the button is clicked', async () => {
 
   const namedays = await screen.findAllByRole('listitem');
   expect(namedays).toHaveLength(2);
+});
+
+test('renders correctly', () => {
+  const tree = renderer
+    .create(<Nameday name="Częstogniew" />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
 });
