@@ -24,7 +24,7 @@ const Nameday = ({ name }) => {
     <div>
       {name && <button onClick={() => getNameday()}>See your namedays</button>}
       {error && <p>Sth went wrong, try again</p>}
-      {(nameDays && nameDays.length) && (
+      {(nameDays && nameDays.length) ? (
         <div>
           <h2>Your namedays are:</h2>
           <ul>
@@ -35,7 +35,7 @@ const Nameday = ({ name }) => {
             ))}
           </ul>
         </div>
-      )}
+      ) : ''}
     </div>
   )
 }

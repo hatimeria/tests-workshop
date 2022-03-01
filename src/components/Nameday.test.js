@@ -9,7 +9,7 @@ test('renders button', () => {
 });
 
 test('doesnt render button if name wasnt passed', () => {
-  render(<Nameday />);
+  render(<Nameday name="" />);
   const button = screen.queryByRole('button', { name: 'See your namedays' });
   expect(button).not.toBeInTheDocument();
 });

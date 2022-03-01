@@ -7,6 +7,6 @@ exports[`renders correctly 1`] = `
   >
     See your namedays
   </button>
-  0
+  
 </div>
 `;
