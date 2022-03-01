@@ -1,17 +1,18 @@
 import { useState } from 'react';
-import './App.css';
-import './Nameday';
-import Nameday from './Nameday';
+import { validateText } from './helpers/validation';
+import Nameday from './components/Nameday';
 
 function App() {
-  const [name, setName] = useState('stranger');
+  const [name, setName] = useState('');
   const [error, setError] = useState('');
   const handleChange = value => {
-    !/[^a-zA-Z]/.test(value) ? setName(value) : setError('You cannot be named like this!');
+    const isValid = validateText(value);
+    setName(isValid ? value : '');
+    setError(isValid ? '' : 'You cannot be named like this!');
   }
   return (
     <main>
-      <h1>Hello {name}!</h1>
+      <h1>Hello {name || 'stranger'}!</h1>
       {error && <p role="alert">{error}</p>}
       <form>
         <label htmlFor="name">Your name:</label>
