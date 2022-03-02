@@ -1,5 +1,6 @@
 import { rest } from 'msw';
 
+// mock server response
 export const handlers = [
   rest.get('https://nameday.abalin.net/api/V1/getname', (req, res, ctx) => {
     return res(
